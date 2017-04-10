@@ -1,0 +1,19 @@
+{
+  "name": "node-mongo",
+  "version": "1.0.0",
+  "description": "Node with mongo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jayakrishnapulipati/node-mongo.git"
+  },
+  "author": "JayaKrishna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jayakrishnapulipati/node-mongo/issues"
+  },
+  "homepage": "https://github.com/jayakrishnapulipati/node-mongo#readme"
+}
