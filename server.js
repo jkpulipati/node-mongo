@@ -38,7 +38,7 @@ let sendEmail = function (email, text) {
         service: 'gmail',
         auth: {
             user: 'jaya.pulipati@gmail.com',
-            pass: 'sathisravani'
+            pass: '******'
         }
     });
 

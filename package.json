@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/jayakrishnapulipati/node-mongo/issues"
   },
-  "homepage": "https://github.com/jayakrishnapulipati/node-mongo#readme"
+  "homepage": "https://github.com/jayakrishnapulipati/node-mongo#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongodb": "^2.2.25",
+    "mongoose": "^4.9.4",
+    "nodemailer": "^4.0.0"
+  }
 }
