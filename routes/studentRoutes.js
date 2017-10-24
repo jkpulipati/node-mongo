@@ -7,7 +7,7 @@ studentRoutes.route('/students')
             .post(studentEvents.saveStudent)
             
 studentRoutes.route('/student/:email')
-            .get()
+            .get(studentEvents.getStudentByEmail)
             .put(studentEvents.updateStudent)
             .delete(studentEvents.deleteStudent)
 

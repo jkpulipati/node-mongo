@@ -80,9 +80,26 @@ function deleteStudent(req, res) {
     }
 }
 
+function getStudentByEmail(req, res) {
+    if (req.params.email) {
+        connectionPool.initializeDBConnection().then((response) => {
+            db = response;
+            db.collection('students').findOne({'email': req.params.email}, function (err, result) {
+                if (err) throw err;
+                res.json(result);
+                db.close();
+            });
+        })
+        .catch((err) => err);
+    } else {
+        getStudents();
+    }
+}
+
 module.exports = {
     getStudents: getStudents,
     saveStudent: saveStudent,
     updateStudent: updateStudent,
-    deleteStudent: deleteStudent
+    deleteStudent: deleteStudent,
+    getStudentByEmail: getStudentByEmail
 }
