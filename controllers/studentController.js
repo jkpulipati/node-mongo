@@ -40,7 +40,6 @@ function saveStudent(req, res) {
 }
 
 function updateStudent(req, res) {
-    console.log(req.params.email);
     if (req.params.email) {
         connectionPool.initializeDBConnection().then((response) => {
             db = response;
@@ -61,8 +60,24 @@ function updateStudent(req, res) {
     
 }
 
-function deleteStudent() {
-    
+function deleteStudent(req, res) {
+    if (req.params.email) {
+        connectionPool.initializeDBConnection().then((response) => {
+            db = response;
+            db.collection('students').deleteOne({'email': req.params.email}, function (err, result) {
+                if (err) throw err;
+                res.json({
+                    status: 200,
+                    message: 'Successfully Deleted Congratualations.'
+                });
+                sharedCtrl.sendEmail(req.params.email, 'You have Successfully removed in ionic sample practice application ');
+                db.close();
+            });
+        })
+        .catch((err) => err);
+    } else {
+        getStudents();
+    }
 }
 
 module.exports = {

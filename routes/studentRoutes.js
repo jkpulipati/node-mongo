@@ -9,7 +9,7 @@ studentRoutes.route('/students')
 studentRoutes.route('/student/:email')
             .get()
             .put(studentEvents.updateStudent)
-            .delete()
+            .delete(studentEvents.deleteStudent)
 
 module.exports = studentRoutes;
             
