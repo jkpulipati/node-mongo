@@ -37,11 +37,37 @@ function saveStudent(req, res) {
         });
     })
     .catch((err) => err);
+}
 
+function updateStudent(req, res) {
+    console.log(req.params.email);
+    if (req.params.email) {
+        connectionPool.initializeDBConnection().then((response) => {
+            db = response;
+            db.collection('students').updateOne({'email': req.params.email}, { $set: req.body}, function (err, result) {
+                if (err) throw err;
+                res.json({
+                    status: 200,
+                    message: 'Successfully Updated Congratualations.'
+                });
+                sharedCtrl.sendEmail(req.params.email, 'You have Successfully Updated in ionic sample practice application ');
+                db.close();
+            });
+        })
+        .catch((err) => err);
+    } else {
+        getStudents();
+    }
+    
+}
+
+function deleteStudent() {
     
 }
 
 module.exports = {
     getStudents: getStudents,
-    saveStudent: saveStudent
+    saveStudent: saveStudent,
+    updateStudent: updateStudent,
+    deleteStudent: deleteStudent
 }
