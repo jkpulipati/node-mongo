@@ -8,7 +8,7 @@ function sendEmail(email, text) {
         service: 'gmail',
         auth: {
             user: 'jaya.pulipati@gmail.com',
-            pass: 'sravanisathi'
+            pass: '****'
         }
     });
 
