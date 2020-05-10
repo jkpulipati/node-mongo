@@ -27,30 +27,6 @@ app.use(bodyParser.json());
 
 app.use('/api', studentRoutes);
 
-app.put('/students', function (req, res) {
-    connection.collection('students').replaceOne({email: req.body.email}, {$set: req.body}, function(err, response) {
-        if (err) throw err;
-        console.log("Successfully Updated Congratualations.");
-        sendEmail(req.body.email, 'You have updated your information Successfully in ionic sample practice application ');
-        res.json({
-            status: 200,
-            message: 'Successfully Updated Congratualations.'
-        });
-    });
-});
-
-app.delete('/students', function (req, res) {
-    connection.collection('students').deleteOne({email: req.body.email}, function(err, response) {
-        if (err) throw err;
-        console.log("Successfully Deleted Congratualations.");
-        sendEmail(req.body.email, 'You are De-activated Successfully in ionic sample practice application ');
-        res.json({
-            status: 200,
-            message: 'Successfully Deleted Congratualations.'
-        });
-    });
-});
-
 app.listen(3000, function () {
     console.log('App listening on port 3000!');
 });
