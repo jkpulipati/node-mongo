@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jayakrishnapulipati/node-mongo.git"
+    "url": "git+https://github.com/jkpulipati/node-mongo.git"
   },
   "author": "JayaKrishna",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jayakrishnapulipati/node-mongo/issues"
+    "url": "https://github.com/jkpulipati/node-mongo/issues"
   },
-  "homepage": "https://github.com/jayakrishnapulipati/node-mongo#readme",
+  "homepage": "https://github.com/jkpulipati/node-mongo#readme",
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
